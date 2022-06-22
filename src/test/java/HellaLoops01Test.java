@@ -12,14 +12,38 @@ public class HellaLoops01Test {
     }
 
     @Test
-    public void testGetRange1A() {
+    public void testGetEvenNum01() {
         // : Given
-        String expected = "0123456789";
+        String expected = "246810";
+        int start = 1;
         int stop = 11;
 
         // : When
-        String actual = loops.getRange(stop);
+        String actual = loops.getEvenNumbers(start,stop);
 
+        // : Then
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testGetOddNum01() {
+        // : Given
+        String expected = "1357911";
+        int start = 1;
+        int stop = 11;
+        // : When
+        String actual = loops.getOddNumbers(start,stop);
+        // : Then
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testGetRange1A() {
+        // : Given
+        String expected = "012345678910";
+        int stop = 11;
+        // : When
+        String actual = loops.getRange(stop);
         // : Then
         Assertions.assertEquals(expected, actual);
     }
@@ -29,10 +53,8 @@ public class HellaLoops01Test {
         // : Given
         String expected = "01234";
         int stop = 5;
-
         // : When
         String actual = loops.getRange(stop);
-
         // : Then
         Assertions.assertEquals(expected, actual);
     }
@@ -42,10 +64,8 @@ public class HellaLoops01Test {
         // : Given
         String expected = "012345678910111213141516171819";
         int stop = 20;
-
         // : When
         String actual = loops.getRange(stop);
-
         // : Then
         Assertions.assertEquals(expected, actual);
     }
@@ -56,10 +76,8 @@ public class HellaLoops01Test {
         String expected = "5678910111213141516171819";
         int start = 5;
         int stop = 20;
-
         // : When
         String actual = loops.getRange(start, stop);
-
         // : Then
         Assertions.assertEquals(expected, actual);
     }
@@ -71,10 +89,8 @@ public class HellaLoops01Test {
         String expected = "101112131415161718192021222324";
         int start = 10;
         int stop = 25;
-
         // : When
         String actual = loops.getRange(start, stop);
-
         // : Then
         Assertions.assertEquals(expected, actual);
     }
@@ -83,13 +99,11 @@ public class HellaLoops01Test {
     @Test
     public void testGetRange3B() {
         // : Given
-        String expected = "100101103104105106107108109";
+        String expected = "100101102103104105106107108109";
         int start = 100;
         int stop = 110;
-
         // : When
         String actual = loops.getRange(start, stop);
-
         // : Then
         Assertions.assertEquals(expected, actual);
     }
@@ -101,10 +115,8 @@ public class HellaLoops01Test {
         int start = 5;
         int stop = 20;
         int step = 5;
-
         // : When
         String actual = loops.getRange(start, stop, step);
-
         // : Then
         Assertions.assertEquals(expected, actual);
     }
@@ -117,10 +129,8 @@ public class HellaLoops01Test {
         int start = 0;
         int stop = 20;
         int step = 1;
-
         // : When
         String actual = loops.getRange(start, stop, step);
-
         // : Then
         Assertions.assertEquals(expected, actual);
     }
@@ -133,10 +143,8 @@ public class HellaLoops01Test {
         int start = 0;
         int stop = 11;
         int step = 2;
-
         // : When
         String actual = loops.getRange(start, stop, step);
-
         // : Then
         Assertions.assertEquals(expected, actual);
     }
@@ -144,29 +152,21 @@ public class HellaLoops01Test {
     @Test
     public void testGetEvenNumbers() {
         // : Given
-        String expected = "5791113151719";
+        String expected = "681012141618";
         int start = 5;
         int stop = 20;
-
         // : When
         String actual = loops.getEvenNumbers(start, stop);
-
         // : Then
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
     public void testGetOddNumbers() {
-        // : Given
-        String expected = "681012141618";
+        String expected = "5791113151719";
         int start = 5;
         int stop = 20;
-        int step = 5;
-
-        // : When
         String actual = loops.getOddNumbers(start, stop);
-
-        // : Then
         Assertions.assertEquals(expected, actual);
     }
 
@@ -174,32 +174,23 @@ public class HellaLoops01Test {
 
     @Test
     public void testGetSquareNumbers() {
-        // : Given
         String expected = "25100225";
         int start = 5;
         int stop = 20;
         int step = 5;
-
-        // : When
         String actual = loops.getSquareNumbers(start, stop, step);
-
-        // : Then
         Assertions.assertEquals(expected, actual);
     }
 
 
     @Test
     public void testGetExponentiationNumbers() {
-        // : Given
         String expected = "25100225";
         int start = 5;
         int stop = 20;
         int step = 5;
         int exponent = 2;
-
-        // : When
         String actual = loops.getExponentiations(start, stop, step, exponent);
-
         Assertions.assertEquals(expected, actual);
     }
 }
